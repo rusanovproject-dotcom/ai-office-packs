@@ -24,6 +24,21 @@ description: >
 
 **Разведение с `creative-brief`:** этот скилл для **AI-генерации** (Claude Code artifact). Если задача для **внешнего человека-разработчика / фрилансера** — запускай `creative-brief`, там ТЗ-формат. Не путай эти два скилла.
 
+**Структура промта — такая же как в `claude-design-prompt` SKILL.md.** Прочитай тот скилл и используй те же 11 секций:
+1. `DISTILLED_AESTHETICS_PROMPT` preamble (anti-slop)
+2. Aesthetic Family (одна из 9 — Editorial Minimalism / Terminal-Core / Cinematic Dark и т.д.)
+3. Design tokens (hex, fonts, spacing, radius)
+4. Typography (3x weight gap)
+5. Color (dominant + 1 sharp accent)
+6. Layout (asymmetric, heavy negative space)
+7. Content spec (что на каждом экране)
+8. Motion (конкретные ms + cubic-bezier из `knowledge/motion-principles.md`)
+9. **Библиотеки** — для Claude Code артефакта дополнительно: shadcn/ui + Magic UI + Aceternity + Motion (Framer Motion) + Tailwind v4. Конкретные компоненты которые должен использовать.
+10. BANNED (Inter/Roboto/Space Grotesk as display, stock people, centered-everything, и т.д.)
+11. Format (HTML + breakpoints: 1920 / 768 / 375)
+
+**Отличие от Claude Design:** добавляй явный стек библиотек + React-компонентные инструкции.
+
 ## Вход
 
 - **Brand Book клиента** — `knowledge/brand/{project}/brand-book.md`. Если нет — **остановись**, запусти `brand-onboarding`.
