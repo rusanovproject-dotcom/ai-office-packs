@@ -1,118 +1,181 @@
-# Brand References Catalog — 30 эталонных брендов
+# Brand References Catalog — 70 эталонных брендов
 
-Каталог брендов для которых есть готовые DESIGN.md через `npx getdesign@latest add {slug}`. Источник: VoltAgent/awesome-design-md (MIT) + сервис getdesign.md.
+Каталог брендов для которых есть готовые DESIGN.md через `npx getdesign@latest add {slug}`. Источник: сервис [getdesign.md](https://getdesign.md) (MIT).
 
-**Как использовать:**
+**Список верифицирован через `npx getdesign@latest list` на 2026-04-22.**
+
+## Как использовать
+
 1. Клиент говорит «хочу как [название]» / «в стиле [бренд]»
-2. Ищешь в таблице — есть ли бренд
+2. Ищешь в таблице — есть ли бренд (и какой у него slug)
 3. Если есть → запускаешь skill `brand-reference` (он вызовет `npx getdesign@latest add {slug}`)
-4. Если нет → skill `site-extract` (через dembrandt CLI)
+4. Если нет → skill `site-extract` (через dembrandt CLI на URL бренда)
 
 **Slug** — то что подставляется в команду `npx getdesign@latest add {slug}`.
 
 ---
 
-## AI / Dev Tools
+## AI / Dev Tools / Developer Platforms
 
-| Бренд | slug | Стиль (1-2 строки) | Лучше для |
+| Бренд | slug | Стиль (1 строка) | Лучше для |
 |-------|------|---------------------|-----------|
-| **Claude** | `claude.ai` | тёплый off-white, охра акцент, serif-touches, «книжный AI» | AI-продукты с человеческим лицом |
-| **Cursor** | `cursor` | dark, code-aesthetic, subtle glow, monospace touches | dev tools, AI-editors |
-| **Vercel** | `vercel` | black/white максимальный контраст, monospace accents, clean grids | dev tools, deploy, hosting, tech brands |
-| **Supabase** | `supabase` | dark + emerald-green accent, code-friendly, open-source вайб | DB, backend, dev tools |
-| **Linear** | `linear.app` | ultra-minimal dark, фиолетовый accent, precision typography | project management, SaaS, tools |
-| **PostHog** | `posthog` | dark dev-tool, orange accent, open-source energy | analytics, dev tools |
-| **Sentry** | `sentry` | dark purple, serious developer-grade | monitoring, error tracking |
-| **Replit** | `replit` | playful orange, dark canvas, коллаборативный вайб | coding education, online IDE |
-| **Railway** | `railway` | ultra-minimal white+black, subtle color touches | infrastructure, deploy |
-| **Anthropic** | `anthropic.com` | cream off-white, охра и coral, literary serif | AI research, thoughtful products |
+| **Claude** | `claude` | Тёплая терракота, чистый editorial, Fraunces-touches | AI-продукты с человеческим лицом |
+| **Cursor** | `cursor` | Sleek dark, gradient accents, code-aesthetic | AI dev-tools, code editors |
+| **Cohere** | `cohere` | Vibrant gradients, data-rich dashboard | Enterprise AI, data-heavy UI |
+| **ElevenLabs** | `elevenlabs` | Dark cinematic UI, audio-waveform aesthetics | Creative audio-tools, премиум-медиа |
+| **Lovable** | `lovable` | Playful gradients, friendly dev aesthetic | AI builders для не-технарей |
+| **Minimax** | `minimax` | Bold dark interface, neon accents | AI model providers |
+| **Mistral** | `mistral.ai` | French minimalism, purple-toned | Open-source AI, European tech |
+| **Ollama** | `ollama` | Terminal-first, monochrome simplicity | Dev-tools, local AI, CLI-products |
+| **OpenCode** | `opencode.ai` | Developer-centric dark theme | Coding platforms |
+| **RunwayML** | `runwayml` | Cinematic dark UI, media-rich | AI video / creative |
+| **Together.ai** | `together.ai` | Technical blueprint-style | Infrastructure AI |
+| **Voltagent** | `voltagent` | Void-black canvas, emerald accent, terminal-native | AI agent frameworks |
+| **Warp** | `warp` | Dark IDE-like, block-based command UI | Modern terminals, dev-tools |
+| **X.AI** | `x.ai` | Stark monochrome, futuristic minimalism | Edgy AI-бренды |
+| **Replicate** | `replicate` | Clean white canvas, code-forward | ML APIs |
+| **Composio** | `composio` | Modern dark, colorful integration icons | Integration platforms |
 
-## SaaS / Productivity
-
-| Бренд | slug | Стиль | Лучше для |
-|-------|------|-------|-----------|
-| **Notion** | `notion` | clean white, soft shadows, comfortable reading, Inter-like | productivity, docs, knowledge base |
-| **Airtable** | `airtable` | красочные accent chips + clean white, bento-style | database apps, CRM, organizers |
-| **Intercom** | `intercom` | purple SaaS, conversational warmth | support, CRM, communication |
-| **Cal.com** | `cal` | минимал scheduling, clean whites, subtle gradient | booking, scheduling, SaaS |
-| **Zapier** | `zapier` | orange-first, friendly automation, approachable | automation, no-code, integrations |
-| **Superhuman** | `superhuman` | premium black + red, sharp typography | premium productivity, email |
-| **Slack** | `slack` | aubergine primary, playful accents | communication, teams |
-
-## Design / Creative Tools
+## SaaS / Productivity / Collaboration
 
 | Бренд | slug | Стиль | Лучше для |
 |-------|------|-------|-----------|
-| **Figma** | `figma` | component-first, multi-color accents, professional | design tools, SaaS |
-| **Framer** | `framer` | motion-forward, dark creative, bold typography | design tools, portfolio, creative |
-| **Webflow** | `webflow` | gradient rich, creative agency vibe | no-code, design, creative |
-| **Lovable** | `lovable` | purple playful, AI-forward, soft | AI apps, vibe coding, startups |
+| **Linear** | `linear.app` | Ультра-минимализм, purple accent, precision | Project management, премиум-SaaS |
+| **Notion** | `notion` | Warm minimalism, serif headings, soft surfaces | All-in-one workspace, knowledge-base |
+| **Figma** | `figma` | Vibrant multi-color, playful yet professional | Collaborative design, creative tools |
+| **Framer** | `framer` | Bold black+blue, motion-first | Website builders, design-forward |
+| **Webflow** | `webflow` | Blue-accented, polished marketing | Visual web-builders |
+| **Airtable** | `airtable` | Colorful, friendly, structured data | Spreadsheet-database hybrids |
+| **Miro** | `miro` | Bright yellow, infinite canvas | Visual collaboration |
+| **Expo** | `expo` | Dark, tight letter-spacing, code-centric | React Native / mobile dev |
+| **Supabase** | `supabase` | Dark emerald theme, code-first | Open-source backends |
+| **Sanity** | `sanity` | Red accent, content-first editorial | Headless CMS |
+| **Mintlify** | `mintlify` | Clean, green-accented, reading-optimized | Documentation platforms |
+| **HashiCorp** | `hashicorp` | Enterprise-clean, black+white | Infrastructure automation |
+| **MongoDB** | `mongodb` | Green leaf, developer documentation focus | Document databases |
+| **Intercom** | `intercom` | Friendly blue, conversational UI | Customer messaging |
+| **Zapier** | `zapier` | Warm orange, friendly illustration | Automation, workflow |
+| **Cal.com** | `cal` | Clean neutral UI, developer-oriented | Open-source scheduling |
+| **Vercel** | `vercel` | Black+white precision, Geist font | Frontend deployment |
+| **Superhuman** | `superhuman` | Premium dark UI, keyboard-first, purple glow | Fast email / премиум-productivity |
+| **Raycast** | `raycast` | Sleek dark chrome, vibrant gradients | Productivity launchers |
+| **Resend** | `resend` | Minimal dark theme, monospace accents | Email API / dev-tools |
+| **PostHog** | `posthog` | Playful hedgehog, developer-friendly dark | Product analytics |
+| **Sentry** | `sentry` | Dark dashboard, data-dense, pink-purple | Error monitoring |
+| **ClickHouse** | `clickhouse` | Yellow-accented, technical docs | Analytics databases |
+| **IBM** | `ibm` | Carbon design system, structured blue | Enterprise technology |
 
-## Fintech / Commerce
+## E-commerce / Fintech / Banking / Crypto
 
 | Бренд | slug | Стиль | Лучше для |
 |-------|------|-------|-----------|
-| **Stripe** | `stripe` | purple gradient, weight-300 elegance, precision | fintech, payment, premium SaaS |
-| **Revolut** | `revolut` | dark + neon, fintech-modern, bold | fintech, banking, consumer finance |
-| **Wise** | `wise` | green-first, friendly, trust-focused | fintech, transfer, accessible finance |
+| **Stripe** | `stripe` | Iridescent gradients, weight-300 elegance | Fintech / payment infrastructure |
+| **Shopify** | `shopify` | Dark cinematic, neon green, ultra-light type | E-commerce platforms |
+| **Coinbase** | `coinbase` | Clean blue, institutional trust | Crypto-exchanges |
+| **Binance** | `binance` | Bold yellow on monochrome, trading urgency | Crypto-trading |
+| **Kraken** | `kraken` | Purple-accented dark, data-dense dashboards | Crypto-trading (tech-heavy) |
+| **Revolut** | `revolut` | Sleek dark, gradient cards, fintech precision | Digital banking, fintech |
+| **Wise** | `wise` | Bright green, friendly and clear | Money transfer, consumer fintech |
+| **Mastercard** | `mastercard` | Warm cream, orbital pills, editorial warmth | Global payments |
 
-## Premium Consumer / Media
-
-| Бренд | slug | Стиль | Лучше для |
-|-------|------|-------|-----------|
-| **Apple** | `apple` | white space king, SF Pro, premium restraint | premium consumer, hardware, lifestyle |
-| **Spotify** | `spotify` | black + neon green, bold typography, dark mode | media, entertainment, audio products |
-| **Airbnb** | `airbnb` | warm photography, soft coral, hospitality | marketplace, travel, lifestyle |
-| **Tesla** | `tesla` | ultra-minimal, white space, engineering aesthetic | EV, premium, tech hardware |
-
-## Automotive / Aerospace
+## Automotive / Premium Physical
 
 | Бренд | slug | Стиль | Лучше для |
 |-------|------|-------|-----------|
-| **BMW** | `bmw` | black/white/blue, precision luxury | automotive, premium hardware |
-| **SpaceX** | `spacex` | black/white minimal, monospace, dramatic | tech, aerospace, hardware |
+| **Apple** | `apple` | Premium whitespace, SF Pro, cinematic imagery | Consumer electronics, premium-lifestyle |
+| **Tesla** | `tesla` | Radical subtraction, full-viewport photography, near-zero UI | Автомобили, премиум-tech |
+| **BMW** | `bmw` | Dark premium surfaces, precise German aesthetic | Luxury automotive |
+| **Ferrari** | `ferrari` | Chiaroscuro editorial, Ferrari Red, cinematic black | Luxury sport-cars |
+| **Lamborghini** | `lamborghini` | True black surfaces, gold accents, dramatic uppercase | Supercars |
+| **Bugatti** | `bugatti` | Cinema-black canvas, monochrome austerity, monumental type | Hypercars |
+| **Renault** | `renault` | Vibrant aurora gradients, NouvelR typography | French automotive, vibrant-consumer |
+| **SpaceX** | `spacex` | Stark black+white, full-bleed imagery, futuristic | Space-tech, bold physical products |
+| **PlayStation** | `playstation` | Three-surface channel, quiet-authority display, cyan hover | Gaming, console-retail |
+
+## Consumer / Retail / Hospitality
+
+| Бренд | slug | Стиль | Лучше для |
+|-------|------|-------|-----------|
+| **Nike** | `nike` | Monochrome UI, massive uppercase, full-bleed photography | Athletic retail, bold consumer |
+| **Starbucks** | `starbucks` | Four-tier green, warm cream, full-pill buttons | Food&beverage, warm retail |
+| **Airbnb** | `airbnb` | Warm coral, photography-driven, rounded UI | Travel marketplaces, hospitality |
+| **Uber** | `uber` | Bold black+white, tight type, urban energy | Mobility, transportation |
+| **Meta** | `meta` | Photography-first, binary surfaces, Meta Blue CTAs | Tech retail, hardware |
+| **Pinterest** | `pinterest` | Red accent, masonry grid, image-first | Visual-discovery, creative-social |
+| **Spotify** | `spotify` | Vibrant green on dark, bold type, album-art-driven | Music-streaming, media-products |
+
+## Media / Editorial
+
+| Бренд | slug | Стиль | Лучше для |
+|-------|------|-------|-----------|
+| **The Verge** | `theverge` | Acid-mint + ultraviolet, Manuka display, rave-flyer | Edgy tech-media, bold editorial |
+| **Wired** | `wired` | Paper-white broadsheet density, custom serif, mono kickers | Классическая tech-журналистика |
+
+## Telecom / Infrastructure
+
+| Бренд | slug | Стиль | Лучше для |
+|-------|------|-------|-----------|
+| **Vodafone** | `vodafone` | Monumental uppercase, Vodafone Red chapter bands | Global telecom |
+| **NVIDIA** | `nvidia` | Green-black energy, technical power aesthetic | GPU / high-performance tech |
+
+## Creative / Agency
+
+| Бренд | slug | Стиль | Лучше для |
+|-------|------|-------|-----------|
+| **Clay** | `clay` | Organic shapes, soft gradients, art-directed | Creative agencies, designer-portfolios |
 
 ---
 
-## Quick picks по задаче
+## Правила выбора для разных ниш клиента
 
-**«Хочу дашборд в стиле SaaS»** → посмотри: Linear, Notion, Cal.com. Возьми один.
+**Онлайн-курс / образовательный продукт:**
+→ `notion`, `clay`, `framer`, `airbnb` (если warm), или `linear.app` (если premium)
 
-**«Хочу premium-лендинг без AI-слопа»** → Stripe, Apple, Tesla. Очень мало элементов, огромный воздух.
+**SaaS / Dev-tools:**
+→ `linear.app`, `vercel`, `stripe`, `cursor`, `posthog`, `supabase`
 
-**«Хочу dev-tool с тёмной темой»** → Vercel, Cursor, Linear, Supabase.
+**AI-продукт:**
+→ `claude`, `cursor`, `elevenlabs`, `runwayml`, `x.ai`, `minimax`
 
-**«Хочу warm+human AI-продукт»** → Claude / Anthropic. Off-white, serif touches, охра.
+**Фитнес / спорт / wellness:**
+→ `nike`, `spotify`, `airbnb`
 
-**«Хочу playful consumer-app»** → Spotify, Airbnb, Lovable, Replit.
+**Fintech / crypto:**
+→ `stripe`, `revolut`, `coinbase`, `kraken`, `wise`
 
-**«Хочу fintech»** → Stripe (premium) / Revolut (modern) / Wise (friendly).
+**Premium / luxury / automotive:**
+→ `apple`, `tesla`, `ferrari`, `bmw`, `bugatti`, `spacex`
 
-**«Хочу productivity / tool»** → Notion, Superhuman, Linear, Cal.com.
+**E-commerce / retail:**
+→ `shopify`, `airbnb`, `meta`, `nike`
 
----
+**Creative tools / media:**
+→ `figma`, `framer`, `miro`, `runwayml`, `spotify`
 
-## Fallback
+**Editorial / журналистика:**
+→ `wired`, `theverge`, `notion`
 
-Если бренда нет в этом каталоге:
-1. Попробовать через **site-extract** skill (`npx dembrandt {url}`)
-2. Если сайт упал / npx недоступен — попроси клиента описать словами (mood, палитра, 3 пункта что цепляет)
-
----
-
-## Что делает getdesign CLI
-
-Команда `npx getdesign@latest add {slug}` создаёт в текущей директории файл `DESIGN.md` с 9 секциями (по стандарту Google Stitch):
-1. Visual Theme
-2. Color Palette
-3. Typography Rules
-4. Component Stylings
-5. Layout Principles
-6. Depth & Elevation
-7. Do's and Don'ts
-8. Responsive Behavior
-9. **Agent Prompt Guide** ← эта секция встраивается в промт
+**Gaming / entertainment:**
+→ `playstation`, `theverge`, `spotify`
 
 ---
 
-*Источник: [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md) (MIT License). Файлы доступны через [getdesign.md](https://getdesign.md) — сервис VoltAgent. Описания стилей составлены на основе публичных материалов брендов.*
+## Fallback если бренда нет
+
+Если клиент говорит «хочу как [бренд которого нет в каталоге]» → запускай skill `site-extract`. Он через `dembrandt` CLI вытащит дизайн-систему с URL этого бренда.
+
+Пример:
+- Клиент: «хочу как duolingo.com»
+- Designer: *«Duolingo нет в нашем каталоге готовых, но сейчас вытащу их стиль напрямую»* → `site-extract https://duolingo.com`
+
+---
+
+## Обновление каталога
+
+Список верифицирован на **2026-04-22** через `npx getdesign@latest list` (версия 0.6.7). Проверить актуальные бренды:
+
+```bash
+npx getdesign@latest list
+```
+
+Если появились новые — добавь в этот каталог в подходящую секцию.
