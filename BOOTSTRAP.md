@@ -1,117 +1,89 @@
-# Bootstrap — первая установка в уже работающий офис
+# Как установить пак — одной командой
 
-Этот промт — **однократный bootstrap** для клиентов у которых уже есть базовый AI-офис, но ещё нет скилла `install-agent`. После применения этого промта — дальше всё работает обычной командой.
+Открой **терминал** (Terminal на macOS / iTerm / Warp / встроенный терминал Cursor).
 
-## Как использовать
-
-1. Открой свой AI-офис в Cursor или Claude Code (папка с `CLAUDE.md`, `office/` и т.д.)
-2. Скопируй промт ниже
-3. Вставь в чат Claude
-4. Claude скачает всё нужное и подключит Дизайнера
-
-## Промт для копирования
-
-```
-Задача: подключить мне в офис Дизайнера из репозитория ai-office-packs.
-
-Сделай следующее:
-
-1. Создай папку .claude/skills/install-agent/ если её нет.
-
-2. Скачай файл:
-   https://raw.githubusercontent.com/rusanovproject-dotcom/ai-office-packs/main/.claude/skills/install-agent/SKILL.md
-   в .claude/skills/install-agent/SKILL.md
-
-3. Создай папку _agent-packs/designer/ если её нет.
-
-4. Скачай все файлы пака Дизайнера с GitHub в _agent-packs/designer/.
-   Структура пака:
-   - install.md
-   - CLAUDE.md, core.md, overrides.md, memory.md, failures.md
-   - knowledge/ (INDEX.md, design-catalog.md, design-stack-2026.md, landing-frameworks.md, edge-cases.md, how-to-design.md)
-   - skills/ (brand-onboarding/SKILL.md, brand-revise/SKILL.md, claude-code-artifact/SKILL.md, claude-design-prompt/SKILL.md, creative-brief/SKILL.md)
-   - templates/ (brand-book.md, design-brief.md)
-
-   Базовый URL:
-   https://raw.githubusercontent.com/rusanovproject-dotcom/ai-office-packs/main/_agent-packs/designer/<путь-к-файлу>
-
-   Используй GitHub API для получения списка файлов:
-   https://api.github.com/repos/rusanovproject-dotcom/ai-office-packs/contents/_agent-packs/designer
-
-   Или просто скачай все файлы из структуры выше через curl/wget.
-
-5. После установки файлов — запусти /install-agent designer чтобы активировать Дизайнера в офисе.
-
-6. Оповести меня одной фразой: "Дизайнер подключён, давай начнём с Brand Book?"
-
-Важно:
-- Не затирай overrides.md если он уже существует (клиентские правки)
-- Не затирай memory.md и failures.md (накопленная память агента)
-- Используй bash с curl для скачивания
-```
-
-## Что произойдёт
-
-1. Claude создаст две папки — `.claude/skills/install-agent/` и `_agent-packs/designer/`
-2. Скачает SKILL.md установщика и все файлы пака Дизайнера (~20 файлов)
-3. Запустит `/install-agent designer` — активирует Дизайнера
-4. Скажет живой фразой что готово
-
-Время: ~30–60 секунд.
-
-## После первой установки
-
-Всё. Больше bootstrap не нужен — теперь в офисе есть скилл `install-agent`. Любой следующий пак ставится одной фразой:
-
-> *установи копирайтера*
-
-Когда будут готовы новые паки.
+Скопируй нужную команду, вставь, нажми Enter. Установка — ~30 секунд.
 
 ---
 
-## Telegram Tools Pack — отдельный промт
+## Telegram Tools — парсинг каналов, дайджесты
 
-Это **не агент**, а набор инструментов (парсинг публичных каналов + HTML-экспорт). Копируется в `.claude/skills/` клиента, не в `office/agents/`.
-
-Открой свой AI-офис и скажи:
-
-> **установи телеграм-инструменты**
-
-Или скопируй развёрнутый промт:
-
-```
-Задача: подключить мне Telegram Tools Pack из ai-office-packs.
-
-Сделай так:
-
-1. Скачай skill telegram-channel-parser в ~/.claude/skills/telegram-channel-parser/
-   — используй GitHub API для списка файлов:
-     https://api.github.com/repos/rusanovproject-dotcom/ai-office-packs/contents/_tool-packs/telegram/skills/telegram-channel-parser
-   — рекурсивно скачай все файлы (SKILL.md, scripts/, config/, assets/)
-   — raw base URL:
-     https://raw.githubusercontent.com/rusanovproject-dotcom/ai-office-packs/main/_tool-packs/telegram/skills/telegram-channel-parser/
-
-2. Сделай скрипты исполняемыми: chmod +x ~/.claude/skills/telegram-channel-parser/scripts/*.sh
-
-3. Создай папку кэша: mkdir -p ~/.claude/skills/telegram-channel-parser/cache
-
-4. Скачай extras/parse-html-export/parse_telegram.py в ~/workspace/tools/telegram/parse_telegram.py
-   (создай папку если нет)
-
-5. Оповести меня живой фразой: "Telegram Tools готовы. Попробуй — скажи 'дайджест любого канала' и я покажу как работает."
+```bash
+curl -sL https://raw.githubusercontent.com/rusanovproject-dotcom/ai-office-packs/main/install.sh | bash -s telegram
 ```
 
-После установки команды типа:
+**После установки** — открой свой AI-офис в Claude Code / Cursor и попробуй:
+
 - *«дайджест канала @linear.app за неделю»*
 - *«топ-10 постов из @notion за месяц»*
-- *«найди упоминания X в каналах Y и Z»*
+- *«найди упоминания X в каналах Y, Z»*
+- *«сравни активность каналов A и B»*
 
-— работают сразу, без токенов и настройки.
+Без токенов, без настройки. Работает сразу.
 
 ---
 
-## Если что-то пошло не так
+## Designer — дизайнер-агент
 
-- Если Claude не может скачать — попроси его использовать `gh` CLI или `git clone`
-- Если `install-agent` скилл не активируется после установки — перезапусти сессию Claude Code / Cursor
-- Если остались ошибки — напиши Никите, разберёмся
+```bash
+curl -sL https://raw.githubusercontent.com/rusanovproject-dotcom/ai-office-packs/main/install.sh | bash -s designer
+```
+
+**Перед запуском** установи переменную `CLAUDE_OFFICE_PATH` — путь к твоему AI-офису (или просто запусти `cd` в папку офиса):
+
+```bash
+cd ~/workspace/my-office
+curl -sL https://raw.githubusercontent.com/rusanovproject-dotcom/ai-office-packs/main/install.sh | bash -s designer
+```
+
+**После установки** в Claude Code в своём офисе скажи:
+
+> *установи дизайнера*
+
+Через 30 секунд Дизайнер — в команде. Дальше:
+
+- *«собери мне Brand Book для моего проекта»*
+- *«сделай лендинг под услугу»*
+- *«обложка для Telegram канала»*
+- *«выложи этот сайт на живой URL»* (Vercel-деплой)
+
+---
+
+## Список всех паков
+
+```bash
+curl -sL https://raw.githubusercontent.com/rusanovproject-dotcom/ai-office-packs/main/install.sh | bash -s list
+```
+
+Покажет что доступно прямо сейчас.
+
+---
+
+## Что если нет доступа к GitHub
+
+В странах где GitHub заблокирован — используй VPN или Cloudflare WARP. Репозиторий публичный, доступен со всего мира.
+
+## Если установка сломалась
+
+1. Проверь что установлен `git`: `git --version`
+2. Проверь интернет: `curl -I https://github.com`
+3. Запусти с debug: `bash -x` вместо `bash`:
+   ```bash
+   curl -sL https://raw.githubusercontent.com/rusanovproject-dotcom/ai-office-packs/main/install.sh | bash -x -s telegram
+   ```
+4. Напиши Никите с логом ошибки.
+
+---
+
+## Безопасность
+
+Скрипт `install.sh` — публичный, читай перед запуском:
+https://github.com/rusanovproject-dotcom/ai-office-packs/blob/main/install.sh
+
+Он делает только:
+- `git clone` этого репо во временную папку
+- Копирует файлы в `~/.claude/skills/` и `~/workspace/tools/` (или `CLAUDE_OFFICE_PATH`)
+- `chmod +x` на bash-скрипты
+- Удаляет временную папку
+
+**Ничего не отправляет наружу, не просит права root, не устанавливает системные пакеты.**

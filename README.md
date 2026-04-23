@@ -1,36 +1,47 @@
 # AI Office — Agent Packs
 
-Модульные паки помощников для клиентских AI-офисов. Устанавливаются одной командой в Cursor / Claude Code.
+Модульные паки помощников и инструментов для AI-офисов. Устанавливаются **одной командой в терминале**.
+
+## Быстрый старт — одна строка
+
+```bash
+curl -sL https://raw.githubusercontent.com/rusanovproject-dotcom/ai-office-packs/main/install.sh | bash -s telegram
+```
+
+Это установит Telegram Tools. Вместо `telegram` — любое имя пака (см. ниже).
+
+## Доступные команды
+
+```bash
+# Список всех паков
+curl -sL https://raw.githubusercontent.com/rusanovproject-dotcom/ai-office-packs/main/install.sh | bash -s list
+
+# Telegram Tools (парсинг публичных каналов, дайджесты)
+curl -sL https://raw.githubusercontent.com/rusanovproject-dotcom/ai-office-packs/main/install.sh | bash -s telegram
+
+# Designer agent (Brand Book + Claude Design + Vercel-деплой)
+curl -sL https://raw.githubusercontent.com/rusanovproject-dotcom/ai-office-packs/main/install.sh | bash -s designer
+```
+
+После установки пака — открываешь свой AI-офис в Claude Code и сразу пользуешься.
 
 ## Что это
 
-У клиента есть базовый AI-офис (Director + Strategist + Architect). Когда нужен дополнительный помощник — Дизайнер, Копирайтер, Продажник, Tech Lead — его не надо создавать руками. Он уже собран как **пак** в этом репозитории.
+У клиента есть базовый AI-офис (Director + Strategist + Architect). Дополнительные помощники и инструменты — паки, которые ставятся по мере нужды.
 
-Клиент пишет в чате Claude Code / Cursor:
-
-> *установи дизайнера*
-
-И через 30 секунд в его офисе появляется рабочий Дизайнер с полным стеком знаний и скилов.
+**Два типа паков:**
+- **Agent-packs** — помощники-агенты (Дизайнер, Копирайтер, Продажник). Получают свою папку в `office/agents/`.
+- **Tool-packs** — наборы скиллов/утилит (Telegram-инструменты, SEO, аналитика). Копируются в `.claude/skills/` и `tools/`.
 
 ## Как это работает
 
-### Если у клиента уже есть `install-agent` skill
+1. Ученик запускает `install.sh` с именем пака
+2. Скрипт делает `git clone` этого репо во временную папку
+3. Читает нужный пак, копирует файлы в правильные места
+4. Делает `chmod +x` на скрипты, создаёт папки кэша
+5. Удаляет временную папку, показывает что дальше
 
-```
-установи дизайнера
-```
-
-Скилл:
-1. Проверяет локальный `_agent-packs/designer/` — если нет, качает с GitHub
-2. Копирует файлы в `office/agents/designer/`
-3. Обновляет `office/AGENTS.md`, корневой `CLAUDE.md`, Director core.md
-4. Оповещает клиента живым языком
-
-### Если скилла `install-agent` ещё нет (первая установка)
-
-Клиент копирует **bootstrap-промт** в Cursor / Claude Code — Claude сам скачивает скилл + первый пак с GitHub, ставит в офис, запускает установку.
-
-Bootstrap-промт: см. `BOOTSTRAP.md` в этом репозитории.
+Для agent-packs — скрипт кладёт `install-agent` skill в `.claude/skills/`, и дальше в Claude Code можно говорить «установи дизайнера» — агент активируется в офисе.
 
 ## Структура репозитория
 
