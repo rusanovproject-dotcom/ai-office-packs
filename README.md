@@ -38,27 +38,34 @@ Bootstrap-промт: см. `BOOTSTRAP.md` в этом репозитории.
 ai-office-packs/
 ├── README.md                 ← этот файл
 ├── BOOTSTRAP.md              ← готовый промт для первой установки
-├── _agent-packs/             ← паки помощников
+├── _agent-packs/             ← паки помощников-агентов
 │   └── designer/             ← пак Дизайнера (Brand Book + Claude Design + Claude Code)
-│       ├── install.md        ← манифест установки
-│       ├── core.md, overrides.md, memory.md, failures.md
-│       ├── knowledge/        ← 6 файлов: каталог, стек 2026, frameworks лендингов, edge-cases
-│       ├── skills/           ← 5 скилов
-│       └── templates/        ← brand-book, design-brief
+├── _tool-packs/              ← паки инструментов (не агенты, утилиты)
+│   └── telegram/             ← Telegram Tools (парсинг каналов, дайджесты)
+│       ├── install.md
+│       ├── README.md
+│       ├── skills/telegram-channel-parser/
+│       └── extras/parse-html-export/
 └── .claude/
     └── skills/
-        └── install-agent/    ← универсальный установщик
+        └── install-agent/    ← универсальный установщик для agent-packs
             └── SKILL.md
 ```
 
 ## Доступные паки
 
+### Agent-packs (помощники)
 | Пак | Что делает | Статус |
 |-----|------------|--------|
-| `designer` | Brand Book + промты для claude.ai/design и Claude Code артефактов | ✅ готов |
+| `designer` | Brand Book + сам делает лендинги/обложки/презентации + Vercel-деплой | ✅ готов (v2.3) |
 | `copywriter` | Тексты, посты, лендинги, рассылки | 🔜 в разработке |
 | `sales` | КП, follow-up, продающие созвоны | 🔜 |
 | `tech-lead` | Код, инфра, деплой | 🔜 |
+
+### Tool-packs (инструменты)
+| Пак | Что делает | Статус |
+|-----|------------|--------|
+| `telegram` | Парсинг публичных TG-каналов, дайджесты по категориям, разбор HTML-экспорта | ✅ готов (v1.0) |
 
 ## Как добавить новый пак
 

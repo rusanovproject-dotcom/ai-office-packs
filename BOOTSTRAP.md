@@ -67,6 +67,49 @@
 
 Когда будут готовы новые паки.
 
+---
+
+## Telegram Tools Pack — отдельный промт
+
+Это **не агент**, а набор инструментов (парсинг публичных каналов + HTML-экспорт). Копируется в `.claude/skills/` клиента, не в `office/agents/`.
+
+Открой свой AI-офис и скажи:
+
+> **установи телеграм-инструменты**
+
+Или скопируй развёрнутый промт:
+
+```
+Задача: подключить мне Telegram Tools Pack из ai-office-packs.
+
+Сделай так:
+
+1. Скачай skill telegram-channel-parser в ~/.claude/skills/telegram-channel-parser/
+   — используй GitHub API для списка файлов:
+     https://api.github.com/repos/rusanovproject-dotcom/ai-office-packs/contents/_tool-packs/telegram/skills/telegram-channel-parser
+   — рекурсивно скачай все файлы (SKILL.md, scripts/, config/, assets/)
+   — raw base URL:
+     https://raw.githubusercontent.com/rusanovproject-dotcom/ai-office-packs/main/_tool-packs/telegram/skills/telegram-channel-parser/
+
+2. Сделай скрипты исполняемыми: chmod +x ~/.claude/skills/telegram-channel-parser/scripts/*.sh
+
+3. Создай папку кэша: mkdir -p ~/.claude/skills/telegram-channel-parser/cache
+
+4. Скачай extras/parse-html-export/parse_telegram.py в ~/workspace/tools/telegram/parse_telegram.py
+   (создай папку если нет)
+
+5. Оповести меня живой фразой: "Telegram Tools готовы. Попробуй — скажи 'дайджест любого канала' и я покажу как работает."
+```
+
+После установки команды типа:
+- *«дайджест канала @linear.app за неделю»*
+- *«топ-10 постов из @notion за месяц»*
+- *«найди упоминания X в каналах Y и Z»*
+
+— работают сразу, без токенов и настройки.
+
+---
+
 ## Если что-то пошло не так
 
 - Если Claude не может скачать — попроси его использовать `gh` CLI или `git clone`
