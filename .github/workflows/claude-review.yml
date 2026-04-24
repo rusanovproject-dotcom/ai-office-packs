@@ -47,4 +47,4 @@ jobs:
             - End with a short summary comment (2-3 sentences): overall assessment + top priority to fix
 
             If the PR is trivial (typo, README, content) — reply with "Nothing to review from code perspective ✅"
-          claude_args: "--max-turns 8 --model claude-sonnet-4-6"
+          claude_args: "--max-turns 15 --model claude-sonnet-4-6"
