@@ -103,3 +103,6 @@ https://raw.githubusercontent.com/rusanovproject-dotcom/ai-office-packs/main/_ag
 ## Автор
 
 Никита Русанов, проект НейроШтаб. 2026.
+
+<!-- workflow test -->
+
