@@ -44,7 +44,14 @@ jobs:
             - Post inline comments on the specific lines where issues exist
             - Keep feedback concise and actionable ("change X to Y because Z")
             - Write in Russian
-            - End with a short summary comment (2-3 sentences): overall assessment + top priority to fix
+            - End with a summary comment that MUST contain:
+              1. Brief assessment in Russian (1-2 sentences)
+              2. On a new line, ONE explicit verdict (exactly one of):
+                 🟢 MERGE-READY — никаких блокеров, можно мержить
+                 🟡 MINOR ISSUES — мержить можно, но почитай комменты
+                 🔴 DO NOT MERGE — есть критичные баги/безопасность/архитектура
+              3. If 🔴 — bullet list of what must be fixed before merge
 
-            If the PR is trivial (typo, README, content) — reply with "Nothing to review from code perspective ✅"
+            If the PR is trivial (typo, README, pure docs without code) — skip inline comments and post just:
+            "🟢 MERGE-READY — тривиальный PR, нечего ревьюить со стороны кода."
           claude_args: "--max-turns 15 --model claude-sonnet-4-6"
